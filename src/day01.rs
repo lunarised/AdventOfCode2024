@@ -38,9 +38,7 @@ pub fn p2(puzzle_input: &str) -> i32 {
 
     for item in left_list {
         
-        let mut add_sim = (right_list.iter().filter(|n| **n == item).count() as i32) * item;
-
-        println!("{}", add_sim);
+        let add_sim = (right_list.iter().filter(|n| **n == item).count() as i32) * item;
         similarity_score += add_sim;
 
 
@@ -54,12 +52,12 @@ mod tests {
     use crate::utils;
     #[test]
     fn part1_test() {
-        let p1_test_input = utils::read_file("inputs/01ATest.txt".to_string());
+        let p1_test_input = utils::read_file("inputs/01t.txt".to_string());
         assert_eq!(p1(p1_test_input.as_str()), 11);
     }
     #[test]
     fn part2_test() {
-        let p1_test_input = utils::read_file("inputs/01ATest.txt".to_string());
+        let p1_test_input = utils::read_file("inputs/01t.txt".to_string());
         assert_eq!(p2(p1_test_input.as_str()), 31);
     }
 }
